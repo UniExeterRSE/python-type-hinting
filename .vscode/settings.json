@@ -1,0 +1,27 @@
+{
+    "editor.formatOnSave": true,
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+        "--line-length",
+        "120"
+    ],
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+    },
+    "isort.args": [
+        "--fass",
+        "--profile",
+        "black",
+        "--atomic"
+    ],
+    "isort.check": true,
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": [
+        "--max-line-length=120",
+        "--ignore=F821",
+        "--count",
+    ],
+    "python.analysis.typeCheckingMode": "strict",
+    "editor.stickyScroll.enabled": true,
+}
