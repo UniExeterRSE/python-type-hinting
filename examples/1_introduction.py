@@ -87,14 +87,13 @@ def remove_from_stock(inventory: dict[str, int], car_model_to_remove: str):
         car_model_to_remove: the model of car to remove
     """
 
-    if car_model_to_remove in inventory:
-        current_stock = inventory[car_model_to_remove]
+    if car_model_to_remove not in inventory:
+        raise ValueError(f"No cars of model {car_model_to_remove} in inventory.")
 
-        if current_stock > 0:
-            inventory[car_model_to_remove] -= 1
+    current_stock = inventory[car_model_to_remove]
 
-        else:
-            del inventory[car_model_to_remove]
+    if current_stock > 1:
+        inventory[car_model_to_remove] -= 1
 
     else:
-        print(f"No cars of model {car_model_to_remove} in inventory.")
+        del inventory[car_model_to_remove]

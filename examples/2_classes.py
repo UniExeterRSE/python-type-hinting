@@ -55,21 +55,20 @@ class Showroom:
         """
 
         if self.price_list is None:
-            print("Price list must be obtained from head office before calculating stock value.")
+            raise ValueError("Price list must be obtained from head office before calculating stock value.")
 
-        else:
-            average_car_price = sum(self.price_list.values()) / len(self.price_list)
+        average_car_price = sum(self.price_list.values()) / len(self.price_list)
 
-            total_stock_value = 0
-            for model_name, stock_count in self.inventory.items():
-                if model_name in self.price_list:
-                    average_model_price = self.price_list[model_name]
-                    total_stock_value += stock_count * average_model_price
+        total_stock_value = 0
+        for model_name, stock_count in self.inventory.items():
+            if model_name in self.price_list:
+                average_model_price = self.price_list[model_name]
+                total_stock_value += stock_count * average_model_price
 
-                else:
-                    total_stock_value += stock_count * average_car_price
+            else:
+                total_stock_value += stock_count * average_car_price
 
-            self.total_stock_value = round(total_stock_value, 2)
+        self.total_stock_value = round(total_stock_value, 2)
 
         print(f"Total stock value: £{self.total_stock_value}")
 
