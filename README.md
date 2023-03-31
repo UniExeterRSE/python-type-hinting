@@ -22,12 +22,12 @@ poetry install
 
 ## Additional materials
 
-- The accompanying presentation can be found in `.pdf` format in the project repository root.
-- A crib sheet containing information on the basic Python types can be found on the MyPy site [here](https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html).
+- The accompanying presentation can be found in `.pptx` and `.pdf` formats in the `presentations` folder.
+- A great crib sheet containing information on the basic Python types can be found on the MyPy site [here](https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html).
 - Additional information on type hinting in NumPy can be found [here](https://numpy.org/devdocs/reference/typing.html). However, type hint support is not mature in NumPy, and discussions are ongoing (see [PEP 646](https://peps.python.org/pep-0646/)).
 - Even so, a generic type `np.typing.NDArray` has been created which can be used by type checkers. An example is shown below:
 
-```Python
+```python
 >>> import numpy as np
 >>> import numpy.typing as npt
 
